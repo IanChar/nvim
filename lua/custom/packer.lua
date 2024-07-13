@@ -15,7 +15,13 @@ return require('packer').startup(function(use)
   -- Color Scheme.
   use { "savq/melange-nvim" }
   -- Tree Sitter -- For parsing out files and syntactical highlighting.
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
+  }
   -- Git integration in nvim. 
   use {'tpope/vim-fugitive'}
   -- Status line
