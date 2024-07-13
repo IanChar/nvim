@@ -28,6 +28,10 @@ return require('packer').startup(function(use)
   use { "aserowy/tmux.nvim"}
   -- See classes and functions within a file.
   use { "stevearc/aerial.nvim" }
+  -- For writing Latex.
+  use { "lervag/vimtex" }
+  -- For python REPL.
+  use { 'Vigemus/iron.nvim' }
   -- LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
