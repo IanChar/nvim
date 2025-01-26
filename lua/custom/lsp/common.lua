@@ -41,33 +41,32 @@ local set_lsp_keymaps = function(client, buf_n)
     buf_map_with_name("n", "gci", function() telescope.lsp_incoming_calls() end, "incoming calls")
     buf_map_with_name("n", "gco", function() telescope.lsp_outgoing_calls() end, "outgoing calls")
 
-    buf_map_with_name("n", "<localleader>lr", function() vim.lsp.buf.rename() end, "rename")
-    buf_map_with_name("n", "<localleader>la", function() vim.lsp.buf.code_action() end, "code action")
-    buf_map_with_name("n", "<localleader>lf", function() vim.lsp.buf.format() end, "format")
-    buf_map_with_name("v", "<localleader>lf", function() vim.lsp.buf.format() end, "format")
+    -- buf_map_with_name("n", "<localleader>lr", function() vim.lsp.buf.rename() end, "rename")
+    -- buf_map_with_name("n", "<localleader>la", function() vim.lsp.buf.code_action() end, "code action")
+    -- buf_map_with_name("n", "<localleader>lf", function() vim.lsp.buf.format() end, "format")
+    -- buf_map_with_name("v", "<localleader>lf", function() vim.lsp.buf.format() end, "format")
+    -- buf_map_with_name("n", "<localleader>lbs", function() show_document_symbols() end, "symbols in this buffer")
+    -- buf_map_with_name(
+    --     "n", "<localleader>lbd",
+    --     function() telescope.diagnostics { bufnr = 0 } end,
+    --     "diagnostics in this buffer"
+    -- )
 
-    buf_map_with_name("n", "<localleader>lbs", function() show_document_symbols() end, "symbols in this buffer")
-    buf_map_with_name(
-        "n", "<localleader>lbd",
-        function() telescope.diagnostics { bufnr = 0 } end,
-        "diagnostics in this buffer"
-    )
+    -- buf_map_with_name(
+    --     "n", "<localleader>lwd",
+    --     function() telescope.diagnostics() end,
+    --     "diagnostics in workspace"
+    -- )
+    -- buf_map_with_name(
+    --     "n", "<localleader>lws",
+    --     function() show_workspace_symbols() end,
+    --     "symbols in workspace"
+    -- )
 
-    buf_map_with_name(
-        "n", "<localleader>lwd",
-        function() telescope.diagnostics() end,
-        "diagnostics in workspace"
-    )
-    buf_map_with_name(
-        "n", "<localleader>lws",
-        function() show_workspace_symbols() end,
-        "symbols in workspace"
-    )
-
-    wk.add({ "<localleader>i", desc = "+lsp commands" })
-    wk.add({ "<localleader>ib", desc = "+buffer" })
-    wk.add({ "<localleader>iw", desc = "+workspace" })
-    wk.add({ "<localleader>L", desc = "+lsp connectors" })
+    -- wk.add({ "<localleader>i", desc = "+lsp commands" })
+    -- wk.add({ "<localleader>ib", desc = "+buffer" })
+    -- wk.add({ "<localleader>iw", desc = "+workspace" })
+    -- wk.add({ "<localleader>L", desc = "+lsp connectors" })
 end
 
 
