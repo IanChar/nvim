@@ -2,6 +2,29 @@ require("custom.remap")
 require("custom.set")
 require("custom.packer")
 
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+  -- See Configuration section for rest
+}
+
+-- For copying in tmux session
+vim.api.nvim_set_option("clipboard","unnamed")
+-- vim.opt.clipboard:append { 'unnamedplus' }
+-- 
+-- if vim.fn.has('mac') == 1 then
+--     vim.g.clipboard = {
+--         name = 'macOS-clipboard',
+--         copy = {
+--             ['+'] = 'pbcopy',
+--             ['*'] = 'pbcopy',
+--         },
+--         paste = {
+--             ['+'] = 'pbpaste',
+--             ['*'] = 'pbpaste',
+--         },
+--     }
+-- end
+
 -- local ensure_packer = function()
 --   local fn = vim.fn
 --   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'

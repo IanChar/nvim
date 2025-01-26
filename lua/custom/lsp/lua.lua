@@ -1,0 +1,36 @@
+-- From https://github.com/alexjuda/dotfiles/blob/7b723242faf9a0d8adea78fb5eabc6eb2a2dfddd/config/nvim/lua/aj/lsp/lua.lua
+local common = require("custom.lsp.common")
+
+local M = {}
+
+
+M.setup = function()
+    -- Requires `lua-language=server` available at PATH.
+    require("lspconfig").lua_ls.setup {
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of neovim)
+                    version = 'LuaJIT',
+                },
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { 'vim' },
+                },
+                workspace = {
+                    -- Make the server aware of neovim runtime files
+                    library = vim.api.nvim_get_runtime_file("", true),
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {
+                    enable = false,
+                },
+            },
+        },
+        on_attach = common.shared_on_attach,
+        capabilities = common.make_shared_capabilities(),
+    }
+end
+
+
+return M
