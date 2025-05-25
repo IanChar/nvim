@@ -47,10 +47,14 @@ return require('packer').startup(function(use)
   use { 'neovim/nvim-lspconfig' }
   -- fancy icons in LSP completion prompt
   use { "onsails/lspkind-nvim" }
-  -- autocomplete framework
-  use { "hrsh7th/nvim-cmp" }
-  -- LSP-based source for cmp
+  -- nvim-cmp libraries for autocompletion
   use { "hrsh7th/cmp-nvim-lsp" }
+  use { "hrsh7th/cmp-buffer" }
+  use { "hrsh7th/cmp-path" }
+  use { "hrsh7th/cmp-cmdline" }
+  use { "hrsh7th/vim-vsnip" }
+  use { "hrsh7th/vim-vsnip-integ" }
+  use { "hrsh7th/nvim-cmp" }
   -- Show callable signature when writing invocation
   use { "ray-x/lsp_signature.nvim" }
   -- Navigation
@@ -66,6 +70,8 @@ return require('packer').startup(function(use)
     "nvim-telescope/telescope-file-browser.nvim",
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
+  -- Telescope UI Select
+  use {'nvim-telescope/telescope-ui-select.nvim' }
   -- File tree explorer
   use {
     'nvim-tree/nvim-tree.lua',

@@ -31,7 +31,7 @@ local set_lsp_keymaps = function(client, buf_n)
     local telescope = require("telescope.builtin")
 
     buf_map_with_name("n", "K", function() vim.lsp.buf.hover() end, "hover")
-    buf_map_with_name("n", "<c-k>", function() vim.lsp.buf.signature_help() end, "signature help")
+    -- buf_map_with_name("n", "<c-k>", function() vim.lsp.buf.signature_help() end, "signature help")
 
     buf_map_with_name("n", "gd", function() telescope.lsp_definitions() end, "definition")
     buf_map_with_name("n", "gD", function() vim.lsp.buf.declaration() end, "declaration")
